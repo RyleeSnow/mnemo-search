@@ -3,8 +3,8 @@
 > **Language**: [English](README.md) | [中文](README.zh.md)
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![Streamlit](https://img.shields.io/badge/streamlit-1.46+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.0+-red.svg)
 
 An AI-powered local document management and search system that supports intelligent indexing, summary generation, and semantic search for PDF and PPT files.
 

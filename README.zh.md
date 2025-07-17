@@ -3,8 +3,8 @@
 > **Language**: [English](README.md) | [中文](README.zh.md)
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![Streamlit](https://img.shields.io/badge/streamlit-1.46+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.0+-red.svg)
 
 一个基于AI的本地文档管理和搜索系统，支持文件的智能索引、摘要生成和语义搜索。
 
