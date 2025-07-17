@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mneno"
+version = "0.1.0"
+description = "mnemo is a tool for managing and searching through large collections of documents."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+mnemo-v1 = "mnemo.v1.run:main"
