@@ -136,11 +136,11 @@ Main configuration options in `src/mnemo/v1/config/config.json`:
 
 ```python
 {
-    "embedding_model_name": "intfloat/multilingual-e5-large",  # Can be replaced with other embedding models
-    "database_folder": "/path/to/your/database",  # Automatically generated based on your initialize input
-    "metadata_with_id_path": "/path/to/metadata_with_id.json",  # Automatically generated based on your initialize input
-    "model_fingerprint_path": "/path/to/model_fingerprint.json",  # Automatically generated based on your initialize input
-    "faiss_index_path": "/path/to/faiss_index.bin"  # Automatically generated based on your initialize input
+    "embedding_model_name": "intfloat/multilingual-e5-large",  # can be replaced with other embedding models
+    "database_folder": "/path/to/your/database",  # automatically generated based on your initialize input
+    "metadata_with_id_path": "/path/to/metadata_with_id.json",  # automatically generated based on your initialize input
+    "model_fingerprint_path": "/path/to/model_fingerprint.json",  # automatically generated based on your initialize input
+    "faiss_index_path": "/path/to/faiss_index.bin"  # automatically generated based on your initialize input
 }
 ```
 
