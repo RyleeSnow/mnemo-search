@@ -126,7 +126,7 @@ The system creates the following files in the specified database folder:
 
 - 📚 Academic research literature management
 - 📋 Enterprise document knowledge base
-- 📖 Personal data organization
+- 📖 Personal files organization
 
 <br>
 
