@@ -1,4 +1,4 @@
-# Mnemo - 智能文档搜索系统
+# Mnemo - 智能文档搜索
 
 > **Language**: [English](README.md) | [中文](README.zh.md)
 
