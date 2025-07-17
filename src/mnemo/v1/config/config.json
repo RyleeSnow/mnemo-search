@@ -1,8 +1,3 @@
 {
-    "embedding_model_name": "multilingual-e5-large",
-    "database_folder": "/Users/rylee/github/mcp_search_local_files/test_data",
-    "metadata_path": "/Users/rylee/github/mcp_search_local_files/test_data/metadata.json",
-    "metadata_with_id_path": "/Users/rylee/github/mcp_search_local_files/test_data/metadata_with_id.json",
-    "model_fingerprint_path": "/Users/rylee/github/mcp_search_local_files/test_data/model_fingerprint_path.json",
-    "faiss_index_path": "/Users/rylee/github/mcp_search_local_files/test_data/faiss_index.bin"
+    "embedding_model_name": "intfloat/multilingual-e5-large",
 }

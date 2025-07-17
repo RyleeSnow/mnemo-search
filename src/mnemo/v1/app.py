@@ -21,8 +21,7 @@ def load_embedding_model():
     """load the embedding model from the specified path"""
     with open(os.path.join(str(Path(__file__).parent.joinpath("config").absolute()), "config.json"), "r", encoding="utf-8") as f:
         config = json.load(f)
-    embedding_model_path = os.path.join(str(Path(__file__).parents[3].absolute()), "embedding_models", config["embedding_model_name"])
-    model = SentenceTransformer(embedding_model_path)
+    model = SentenceTransformer(config["embedding_model_name"])
     return model
 
 

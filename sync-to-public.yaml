@@ -1,0 +1,29 @@
+
+
+name: Sync to Public Repo
+
+on:
+  push:
+    branches:
+      - mnemo-streamlit  # 仅当 mnemo-streamlit 分支有变动时触发
+
+jobs:
+  sync:
+    permissions:
+      contents: write  # 需要写入权限
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout source branch
+      uses: actions/checkout@v4
+      with:
+        ref: mnemo-streamlit  # 指定分支
+        fetch-depth: 0  # 获取完整历史
+        persist-credentials: false  # 禁用凭据缓存
+    
+    - name: Push to public repo
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git remote add public https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/RyleeSnow/mnemo-search.git
+        git push --force public mnemo-streamlit:main
