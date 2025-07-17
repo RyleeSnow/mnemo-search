@@ -78,7 +78,7 @@ Add documents to the search index:
 1. Select `organize` option
 2. Specify the folder path containing documents
 3. Select file types (PDF/PPT)
-4. Choose LLM model quality (Quality/Speed)
+4. Choose LLM model quality (`Quality`/`Speed`)
 5. Click `start` to begin processing
 
 **Notes:**
