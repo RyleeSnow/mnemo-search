@@ -42,8 +42,8 @@
    pip install -e .
    ```
 
-3. **配置Ollama**
-   
+3. **启动并配置Ollama**
+
 ```bash
    ollama pull modelscope.cn/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF:Q4_K_M
    ollama cp "modelscope.cn/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF:Q4_K_M" Nous-Hermes-2-Mistral-7B-DPO_Q4_K_M
@@ -53,6 +53,8 @@
    ollama cp "modelscope.cn/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF:Q4_K_M" Mistral-Small-3.2-24B-Instruct-2506_Q4_K_M
    ollama rm "modelscope.cn/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF:Q4_K_M"
 ```
+
+- 在 `Terminal` 中输入命令行 `ollama list` 并回车，如果显示模型 `Mistral-Small-3.2-24B-Instruct-2506_Q4_K_M` 和 `Nous-Hermes-2-Mistral-7B-DPO_Q4_K_M`, 说明设置成功。
 
 4. **启动应用**
    ```bash
@@ -83,14 +85,24 @@
 
 **注意事项：**
 - 建议首次使用时选择少量文件进行测试
-- `Quality`模式使用 `Mistral-Small-3.2-24B-Instruct-2506:Q4_K_M`，提供更高精度但处理时间较长
-- `Speed`模式使用 `Nous-Hermes-2-Mistral-7B-DPO:Q4_K_M`，处理速度更快但精度稍低
+- 每次会默认入库文件夹中的所有符合要求的文件，如果已经入库过会跳过。同个文件名但是不同文件夹的文件，会被当成一个文件，只入库一次。
+- 建议一次性不要入库过多文件，以免一次耗时过长。
+  - 如果左侧 `Chooose LLM model` 菜单选择 `quality`，会启用 `Mistral-Small-3.2-24B-Instruct-2506:Q4_K_M` 模型，提供更高精度但处理时间较长
+  - 如果左侧 `Chooose LLM model` 菜单选择 `speed`，会启用 `Nous-Hermes-2-Mistral-7B-DPO:Q4_K_M` 模型，处理速度更快但精度稍低
+  - 经过测试，一般来说建议使用 `quality` 模型
+- 目前阶段仅支持 `ppt` 和 `pdf` 文件（可勾选）。如果同个文件内容有 `ppt` 和 `pdf` 两个版本，建议使用 `ppt` 版本，能更准确捕捉文本内容，耗时也相对更短。
+- 如果在运行过程中想临时终止，可点击左侧菜单的 `Stop` 按钮
 
 ### 3. 文档搜索
 
-完成文档入库后，在搜索界面输入查询内容即可获得相关文档结果，系统会按照相关性从上至下显示文件名。
+完成文档入库后，在左侧菜单栏选择 `search`，填入你想搜索的内容即可，系统会按照相关性从上至下显示文件名。
 
 如果使用 Mac，则可点击文件名直接打开文件。
+
+### 4. 结束使用
+- 关闭网页
+- 退出 ollama 客户端
+- 在运行 `mnemo-v1` 的窗口 ，CTRL+C 终止进程
 
 <br>
 

@@ -42,8 +42,8 @@ An AI-powered local document management and search system that supports intellig
    pip install -e .
    ```
 
-3. **Configure Ollama**
-   
+3. **Start and Configure Ollama**
+
    ```bash
    ollama pull modelscope.cn/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF:Q4_K_M
    ollama cp "modelscope.cn/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF:Q4_K_M" Nous-Hermes-2-Mistral-7B-DPO_Q4_K_M
@@ -53,6 +53,8 @@ An AI-powered local document management and search system that supports intellig
    ollama cp "modelscope.cn/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF:Q4_K_M" Mistral-Small-3.2-24B-Instruct-2506_Q4_K_M
    ollama rm "modelscope.cn/unsloth/Mistral-Small-3.2-24B-Instruct-2506-GGUF:Q4_K_M"
    ```
+
+   - In the `Terminal`, enter the command `ollama list` and press Enter. If you see models `Mistral-Small-3.2-24B-Instruct-2506_Q4_K_M` and `Nous-Hermes-2-Mistral-7B-DPO_Q4_K_M`, the setup is successful.
 
 4. **Launch Application**
    ```bash
@@ -83,14 +85,24 @@ Add documents to the search index:
 
 **Notes:**
 - Recommended to select a small number of files for initial testing
-- `Quality` mode uses `Mistral-Small-3.2-24B-Instruct-2506:Q4_K_M`, providing higher accuracy but longer processing time
-- `Speed` mode uses `Nous-Hermes-2-Mistral-7B-DPO:Q4_K_M`, processing faster but with slightly lower accuracy
+- By default, all eligible files in the folder will be indexed each time. Previously indexed files will be skipped. Files with the same filename in different folders will be treated as one file and indexed only once.
+- It's recommended not to index too many files at once to avoid excessively long processing times.
+  - If you select `Quality` in the left `Choose LLM model` menu, it will use the `Mistral-Small-3.2-24B-Instruct-2506:Q4_K_M` model, providing higher accuracy but longer processing time
+  - If you select `Speed` in the left `Choose LLM model` menu, it will use the `Nous-Hermes-2-Mistral-7B-DPO:Q4_K_M` model, processing faster but with slightly lower accuracy
+  - Through testing, it's generally recommended to use the `Quality` model
+- Currently, only `ppt` and `pdf` files are supported (can be selected). If the same content has both `ppt` and `pdf` versions, it's recommended to use the `ppt` version, which can more accurately capture text content and takes relatively less time.
+- If you want to temporarily stop during processing, you can click the `Stop` button in the left menu
 
 ### 3. Document Search
 
-After completing document indexing, enter query content in the search interface to get relevant document results. The system will display file names sorted by relevance from top to bottom.
+After completing document indexing, select `search` in the left menu bar, enter your search query, and the system will display file names sorted by relevance from top to bottom.
 
 If you're using Mac, you can click on the file names to open the files directly.
+
+### 4. Ending Usage
+- Close the webpage
+- Exit the ollama client
+- In the window where you ran `mnemo-v1`, press CTRL+C to terminate the process
 
 <br>
 
