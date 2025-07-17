@@ -5,7 +5,7 @@ name: Sync to Public Repo
 on:
   push:
     branches:
-      - mnemo-streamlit  # 仅当 mnemo-streamlit 分支有变动时触发
+      - mnemo-search  # 仅当 mnemo-search 分支有变动时触发
 
 jobs:
   sync:
@@ -17,7 +17,7 @@ jobs:
     - name: Checkout source branch
       uses: actions/checkout@v4
       with:
-        ref: mnemo-streamlit  # 指定分支
+        ref: mnemo-search  # 指定分支
         fetch-depth: 0  # 获取完整历史
         persist-credentials: false  # 禁用凭据缓存
     
@@ -26,4 +26,4 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         git remote add public https://x-access-token:${{ secrets.PUBLIC_REPO_TOKEN }}@github.com/RyleeSnow/mnemo-search.git
-        git push --force public mnemo-streamlit:main
+        git push --force public mnemo-search:main
